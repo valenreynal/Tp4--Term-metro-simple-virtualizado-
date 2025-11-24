@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "valentina reynal",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 39, "left": 47.4, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -124.5, "left": 234.6, "attrs": {} },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": 163.16,
+      "left": -165.77,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "sevseg1:GND", "uno:GND.2", "black", [ "h28.8", "v76.8", "h182.4" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v28.8", "h-115.2" ] ],
+    [ "sevseg1:VCC", "uno:5V", "red", [ "h19.2", "v57.6", "h182.4" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v9.6", "h-220.8", "v268.8", "h172.8" ] ],
+    [ "uno:10", "dht1:SDA", "green", [ "v-38.4", "h58.3" ] ],
+    [ "sevseg1:DIO", "uno:12", "green", [ "h28.8", "v-192", "h134.4" ] ],
+    [ "sevseg1:CLK", "uno:11", "green", [ "h0", "v-211.2", "h182.4" ] ]
+  ],
+  "dependencies": {}
+}
