@@ -34,10 +34,10 @@ void loop() {
     if (temperatura >= 0) { 
       digito[0] = 0;  // dejo espacio vacio
         if (entero < 10) { //si es de un solo digito
-           digito[2] = display.encodeDigit(entero); //muestra el numero en la posicion 1 del display
+           digito[2] = display.encodeDigit(entero); //muestra el numero en la posicion 2 del display
         } else {
-            digito[1] = display.encodeDigit(entero / 10); //si tiene 2 digitos al dividirlo por 10 muestro la decena en la posicion 0
-            digito[2] = display.encodeDigit(entero % 10); // y aca la unidad en la posicion 1
+            digito[1] = display.encodeDigit(entero / 10); //si tiene 2 digitos al dividirlo por 10 muestro la decena en la posicion 1
+            digito[2] = display.encodeDigit(entero % 10); // y aca la unidad en la posicion 2
         }
         digito[2] = punto(display.encodeDigit(entero % 10));  //muestra el punto
         digito[3] = display.encodeDigit(digitoDecimal ); //muestra el numero decimal en la posicion 3
@@ -47,7 +47,6 @@ void loop() {
       // SI TENGO NUMEROS NEGATIVOS
         int e = -entero; //si es negativo el numero lo paso a entero ( el display no admite numeros negativos)
         digito[0] = 0b01000000; // le agrego el signo "-" (segmento g)
-
         digito[1] = display.encodeDigit(e / 10); //muestro la decena
        digito[2] = punto(display.encodeDigit(0)); 
         digito[2] = punto(display.encodeDigit(e % 10));
